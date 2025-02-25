@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.0.4",
+    "@tailwindcss/vite": "^4.0.8",
+    "astro": "^5.3.1",
+    "svelte": "^5.20.4",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5.7.3"
+  }
+}
