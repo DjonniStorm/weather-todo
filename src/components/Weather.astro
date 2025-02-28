@@ -1,0 +1,15 @@
+---
+import { getWeather } from "../utils/weather.api";
+
+const props = Astro.props;
+let data;
+try {
+    data = await getWeather(props);
+} catch (e) {
+
+}
+---
+
+<div>
+
+</div>

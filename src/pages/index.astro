@@ -1,7 +1,7 @@
 ---
-import Wrapper from '../components/Wrapper.svelte';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.svelte';
+import Main from '../components/Main.svelte';
 import '../styles/index.css';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -10,5 +10,5 @@ import '../styles/index.css';
 
 <Layout>
 	<Header />
-	
+	<Main client:load />
 </Layout>
