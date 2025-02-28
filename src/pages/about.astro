@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.svelte';
+import AboutMain from '../components/AboutMain.svelte';
+import '../styles/index.css';
+---
+
+<Layout>
+    <Header />
+    <AboutMain client:load />
+</Layout>

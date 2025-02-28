@@ -34,8 +34,6 @@
         }
     })
 
-    // $effect(() => {
-    // })
 </script>
 
 <main class="flex-1 flex items-center justify-center">

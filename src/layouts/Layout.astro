@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Узнай погоду по своей локации" />
 		<title>Погода</title>
 	</head>
 	<body>
@@ -13,6 +14,13 @@
 </html>
 
 <style>
+	@font-face {
+  		font-family: 'FiraCode';
+  		src: url('/fonts/fira-code.ttf') format('ttf');
+  		font-weight: normal;
+  		font-style: normal;
+  		font-display: swap;
+	}
 	* {
 		margin: 0;
 		padding: 0;
@@ -23,5 +31,6 @@
 		flex-direction: column;
 		height: 100dvh;
 		width: 100%;
+		font-family: 'Fira Code Variable', monospace;
 	}
 </style>

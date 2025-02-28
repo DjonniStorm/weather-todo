@@ -3,6 +3,7 @@
     import { LocationMap } from '../utils/map';
     import { onMount } from 'svelte';
     import WeatherInfo from './WeatherInfo.svelte';
+    import EmojiDescription from './EmojiDescription.svelte';
     
     type Props = {
         latitude: number;
@@ -65,7 +66,7 @@
     }
 </script>
 
-<div class="rounded-4xl flex flex-col justify-center items-center border-amber-300 border-2 shadow-2xl p-10 overflow-hidden md:max-w-10/12">
+<div class="rounded-4xl flex flex-col justify-center items-center gap-10 border-amber-300 border-2 shadow-2xl p-10 overflow-hidden md:max-w-10/12">
     <section class="">
         <h1>{addres_state}</h1>
         <span>О погоде в городе {city}</span>
@@ -82,4 +83,5 @@
             {/if}
         </div>
     </section>
+    <EmojiDescription />
 </div>
