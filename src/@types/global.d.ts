@@ -43,3 +43,14 @@ type Coordinates = {
     latitude: number;
     longtitude: number;
 };
+
+type WeatherData = {
+    time: Date;
+    temperature: string;
+    rain: string;
+    showers: string;
+    snowfall: string;
+    snowDepth: string;
+    visibility: string;
+    windspeed: string;
+};

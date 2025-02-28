@@ -56,20 +56,17 @@ export const getWeather = async ({ latitude, longtitude }: Coordinates) => {
             windSpeed10m: hourly.variables(7)!.valuesArray()!,
         },
     };
-    // console.log(weatherData, response.latitude());
-    for (let i = 0; i < weatherData.hourly.time.length; i++) {
-        console.log(
-            weatherData.hourly.time[i].toLocaleTimeString(),
-            weatherData.hourly.temperature2m[i].toFixed(2),
-            weatherData.hourly.rain[i].toFixed(2),
-            weatherData.hourly.showers[i].toFixed(2),
-            weatherData.hourly.snowfall[i].toFixed(2),
-            weatherData.hourly.snowDepth[i].toFixed(2),
-            weatherData.hourly.cloudCover[i].toFixed(2),
-            weatherData.hourly.visibility[i].toFixed(2),
-            weatherData.hourly.windSpeed10m[i].toFixed(2),
-        );
-    }
 
-    return response;
+    const returnData = weatherData.hourly;
+
+    return {
+        time: returnData.time,
+        temperature: returnData.temperature2m,
+        rain: returnData.rain,
+        showers: returnData.showers,
+        snowfall: returnData.snowfall,
+        snowDepth: returnData.snowDepth,
+        visibility: returnData.visibility,
+        windspeed: returnData.windSpeed10m,
+    };
 };
