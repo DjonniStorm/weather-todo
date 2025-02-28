@@ -1,9 +1,11 @@
 <script lang="ts">
-    let {time, rain, snowfall, windspeed}: WeatherData = $props();
+    let { time, rain, snowfall, windspeed }: WeatherData = $props();
 </script>
 
 <div class="rounded-2xl border border-b-blue-100 p-2">
-    <div class="flex flex-col gap-1 min-w-10 min-h-10 justify-center items-center">
+    <div
+        class="flex flex-col gap-1 min-w-10 min-h-10 justify-center items-center"
+    >
         {#if !!+rain.trim()}
             <span>&#9748; {rain}</span>
         {/if}
@@ -15,6 +17,8 @@
         {/if}
     </div>
     <div class="flex-1/2">
-        <p class="text-black text-center">&#x231b; {time.toLocaleTimeString().substring(0,5)}</p>
+        <p class="text-black text-center">
+            &#x231b; {time.toLocaleTimeString().substring(0, 5)}
+        </p>
     </div>
 </div>

@@ -1,3 +1,1 @@
-<div>
-    Error
-</div>
+<div>Error</div>

@@ -3,5 +3,13 @@
     "bracketSpacing": true,
     "jsxSingleQuote": false,
     "singleQuote": true,
-    "plugins": []
+    "plugins": ["prettier-plugin-svelte"],
+    "overrides": [
+        {
+            "files": "*.svelte",
+            "options": {
+                "parser": "svelte"
+            }
+        }
+    ]
 }

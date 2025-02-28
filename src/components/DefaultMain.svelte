@@ -1,3 +1,1 @@
-<main class="">
-
-</main>
+<main class=""></main>

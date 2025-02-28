@@ -3,11 +3,11 @@
         href: string;
         target?: '_blank';
         text: string;
-    }
+    };
 
-    const { href, target, text } : Props  = $props();
+    const { href, target, text }: Props = $props();
 
-    console.log(href, text)
+    console.log(href, text);
 </script>
 
 <a {href} {target} class="block hover:border-b-2 border-amber-200 transition">
