@@ -1,22 +1,14 @@
 name: Deploy to GitHub Pages
 
 on:
-    # Запуск при пуше в main/master
     push:
-        branches: [main, master]
-    # Позволяет запускать этот workflow вручную из вкладки Actions
+        branches: [master]
     workflow_dispatch:
 
-# Разрешить этому workflow создавать GitHub Pages
 permissions:
     contents: read
     pages: write
     id-token: write
-
-# Разрешить только один параллельный деплой
-concurrency:
-    group: 'pages'
-    cancel-in-progress: true
 
 jobs:
     build:
