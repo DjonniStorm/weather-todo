@@ -9,7 +9,12 @@ export default defineConfig({
     integrations: [svelte()],
     vite: {
         plugins: [tailwindcss()],
+        build: {
+            assetsInlineLimit: 0,
+        },
     },
     site: 'https://DjonniStorm.github.io',
     base: '/weather-todo',
+    output: 'static',
+    trailingSlash: 'always',
 });
