@@ -1,12 +1,35 @@
 <script lang="ts">
     import { Routes } from '../utils/routes';
     import NavLink from './NavLink.svelte';
+    import { onMount } from 'svelte';
 
-    const routes: Array<Omit<Route, 'name'>> = Routes.routes.map((elem) => ({
-        text: elem.text,
-        href: elem.href,
-        blank: elem.target ?? undefined,
-    }));
+    let currentPath = $state('');
+    let routes: Array<Omit<Route, 'name'>> = $state([]);
+
+    const updateRoutes = () => {
+        routes = Routes.routes
+            .filter((route) => {
+                if (currentPath === route.href) {
+                    return false;
+                }
+                return true;
+            })
+            .map((elem) => ({
+                text: elem.text,
+                href: elem.href,
+                blank: elem.target ?? undefined,
+            }));
+    };
+
+    onMount(() => {
+        currentPath = window.location.pathname;
+        updateRoutes();
+    });
+
+    $effect(() => {
+        currentPath = window.location.pathname;
+        updateRoutes();
+    });
 </script>
 
 <header
@@ -22,7 +45,7 @@
         </a>
     </div>
     <nav class="flex flex-1/2 justify-end gap-3 md:gap-5 items-center">
-        {#each routes.slice(1).reverse() as route}
+        {#each routes as route}
             <NavLink {...route} />
         {/each}
     </nav>

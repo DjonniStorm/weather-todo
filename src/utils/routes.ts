@@ -13,7 +13,7 @@ export const Routes: RoutesType = {
         },
         {
             name: 'city',
-            href: '/ulyanovsk',
+            href: '/ulsk',
             text: 'Ульяновск',
             target: '_blank',
         },
