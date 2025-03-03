@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
     push:
-        branches: [master]
+        branches: [main, master]
     workflow_dispatch:
 
 permissions:
@@ -11,8 +11,12 @@ permissions:
     id-token: write
 
 jobs:
-    build:
+    build-and-deploy:
         runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -31,18 +35,16 @@ jobs:
                   PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
                   PUBLIC_API_ADDRES_URL: ${{ secrets.PUBLIC_API_ADDRES_URL }}
 
-            - name: Upload Pages artifact
+            - name: Setup Pages
+              uses: actions/configure-pages@v4
+              with:
+                  static_site_generator: astro
+
+            - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: dist/
+                  path: dist
 
-    deploy:
-        needs: build
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
