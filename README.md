@@ -1,7 +1,6 @@
 # Weather App
 
-[![CI](https://github.com/$USERNAME/$REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/$USERNAME/$REPO/actions/workflows/ci.yml)
-[![Deploy](https://github.com/$USERNAME/$REPO/actions/workflows/deploy.yml/badge.svg)](https://github.com/$USERNAME/$REPO/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/DjonniStorm/weather-todo/actions/workflows/deploy.yml/badge.svg)](https://github.com/$USERNAME/$REPO/actions/workflows/deploy.yml)
 
 Приложение для просмотра погоды с использованием геолокации.
 

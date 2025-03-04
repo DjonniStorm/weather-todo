@@ -17,10 +17,10 @@
                 return true;
             })
             .map((elem) => ({
-                text: elem.text,
+        text: elem.text,
                 href: getFullPath(elem.href),
-                blank: elem.target ?? undefined,
-            }));
+        blank: elem.target ?? undefined,
+    }));
     };
 
     onMount(() => {
