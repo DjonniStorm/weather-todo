@@ -5,29 +5,29 @@ import { OSM } from 'ol/source';
 import { z } from 'astro/zod';
 
 const responseObject = z.object({
-    licence: z.string(),
-    osm_type: z.string(),
-    osm_id: z.number(),
-    lat: z.string(),
-    lon: z.string(),
-    place_rank: z.number(),
-    category: z.string(),
-    type: z.string(),
-    importance: z.number(),
-    addresstype: z.string(),
-    display_name: z.string(),
-    name: z.string(),
+    licence: z.string().optional(),
+    osm_type: z.string().optional(),
+    osm_id: z.number().optional(),
+    lat: z.string().optional(),
+    lon: z.string().optional(),
+    place_rank: z.number().optional(),
+    category: z.string().optional(),
+    type: z.string().optional(),
+    importance: z.number().optional(),
+    addresstype: z.string().optional(),
+    display_name: z.string().optional(),
+    name: z.string().optional(),
     address: z.object({
         village: z.string().optional(),
         city: z.string().optional(),
         region: z.string().optional(),
         state_district: z.string().optional(),
-        state: z.string(),
-        postcode: z.string(),
-        country: z.string(),
-        country_code: z.string(),
+        state: z.string().optional(),
+        postcode: z.string().optional(),
+        country: z.string().optional(),
+        country_code: z.string().optional(),
     }),
-    boundingbox: z.array(z.string()),
+    boundingbox: z.array(z.string()).optional(),
 });
 
 export class LocationMap {
@@ -70,7 +70,7 @@ export class LocationMap {
             console.warn(e);
             return {
                 addres: null,
-                error: 'error',
+                error: 'Невозможно получить адрес',
             };
         }
     }
